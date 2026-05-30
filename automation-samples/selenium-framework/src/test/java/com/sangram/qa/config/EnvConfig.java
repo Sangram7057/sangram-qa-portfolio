@@ -15,4 +15,12 @@ public final class EnvConfig {
     public static String password() {
         return System.getenv().getOrDefault("TEST_PASSWORD", "replace-me");
     }
+
+    public static boolean headless() {
+        return Boolean.parseBoolean(System.getenv().getOrDefault("HEADLESS", "true"));
+    }
+
+    public static long explicitWaitSeconds() {
+        return Long.parseLong(System.getenv().getOrDefault("EXPLICIT_WAIT_SECONDS", "15"));
+    }
 }

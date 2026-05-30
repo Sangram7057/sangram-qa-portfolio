@@ -63,8 +63,9 @@ This portfolio also includes public-safe automation code examples in [automation
 - Framework-based Playwright MCP smoke server under `playwright-framework/mcp/playwright-mcp-server.ts`
 - Framework-based Playwright MCP sanity and regression server under `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`
 - Selenium WebDriver and TestNG mini framework sample with Maven, grouped suites, and Jenkinsfile
-- Selenium WebDriver and TestNG login smoke test
-- Selenium regression and sanity suite example
+- Framework-based Selenium smoke suite under `selenium-framework/src/test/java/com/sangram/qa/tests/SmokeSuiteTest.java`
+- Framework-based Selenium sanity suite under `selenium-framework/src/test/java/com/sangram/qa/tests/SanitySuiteTest.java`
+- Framework-based Selenium regression suite under `selenium-framework/src/test/java/com/sangram/qa/tests/RegressionSuiteTest.java`
 - Rest Assured API contract validation sample
 
 All examples avoid hardcoded credentials and use environment variables or placeholders instead.

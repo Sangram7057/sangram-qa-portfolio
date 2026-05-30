@@ -21,10 +21,12 @@ This folder contains public-safe QA automation examples that reflect the kinds o
   Framework-based MCP server that exposes Playwright smoke automation as MCP tools
 - `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`
   Framework-based MCP server that exposes Playwright sanity and regression suites as MCP tools
-- `selenium-login-smoke-test.java`
-  Example Selenium WebDriver and TestNG smoke flow with waits and assertions
-- `selenium-regression-sanity-suite.java`
-  Example Selenium WebDriver and TestNG suite with separate sanity and regression coverage
+- `selenium-framework/src/test/java/com/sangram/qa/tests/SmokeSuiteTest.java`
+  Framework-based Selenium smoke flow covering login, dashboard widgets, and sign-out
+- `selenium-framework/src/test/java/com/sangram/qa/tests/SanitySuiteTest.java`
+  Framework-based Selenium sanity flow for authentication and dashboard validation
+- `selenium-framework/src/test/java/com/sangram/qa/tests/RegressionSuiteTest.java`
+  Framework-based Selenium regression flow across accounts, transactions, and profile checks
 - `restassured-account-summary-test.java`
   Example Rest Assured API test using a bearer token from the environment
 - `mcp-config.sample.json`

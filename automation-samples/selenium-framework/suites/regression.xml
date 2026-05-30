@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Regression Suite">
+  <test name="Regression">
+    <classes>
+      <class name="com.sangram.qa.tests.RegressionSuiteTest"/>
+    </classes>
+  </test>
+</suite>

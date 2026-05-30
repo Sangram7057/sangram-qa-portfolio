@@ -8,9 +8,9 @@ import com.sangram.qa.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SanitySuiteTest extends TestBase {
-    @Test(groups = {"sanity"})
-    public void criticalAuthJourneyWorks() {
+public class SmokeSuiteTest extends TestBase {
+    @Test(groups = {"smoke"})
+    public void validUserCanLoginAndViewDashboardWidgets() {
         LoginPage loginPage = new LoginPage(driver, waitHelper);
         DashboardPage dashboardPage = new DashboardPage(driver, waitHelper);
 
@@ -19,11 +19,25 @@ public class SanitySuiteTest extends TestBase {
         waitHelper.urlContains("/dashboard");
         dashboardPage.waitUntilLoaded();
 
-        Assert.assertEquals(dashboardPage.titleText(), "Dashboard");
-        Assert.assertTrue(dashboardPage.accountSummaryVisible());
+        Assert.assertTrue(driver.getCurrentUrl().contains("/dashboard"));
+        Assert.assertTrue(
+            dashboardPage.notificationsPanelVisible(),
+            "Notifications panel should be visible after login."
+        );
+    }
 
+    @Test(groups = {"smoke"})
+    public void userCanSignOutCleanlyFromHeaderMenu() {
+        LoginPage loginPage = new LoginPage(driver, waitHelper);
+        DashboardPage dashboardPage = new DashboardPage(driver, waitHelper);
+
+        loginPage.open(EnvConfig.baseUrl());
+        loginPage.login(TestUsers.validUser().username(), TestUsers.validUser().password());
+        waitHelper.urlContains("/dashboard");
+        dashboardPage.waitUntilLoaded();
         dashboardPage.signOut();
         waitHelper.urlContains("/login");
+
         Assert.assertTrue(driver.getCurrentUrl().contains("/login"));
         Assert.assertTrue(loginPage.signInVisible(), "Sign in button should be visible after sign out.");
     }

@@ -6,15 +6,21 @@ pipeline {
   }
 
   stages {
+    stage('Smoke') {
+      steps {
+        sh 'mvn test -Psmoke'
+      }
+    }
+
     stage('Sanity') {
       steps {
-        sh 'mvn test -Dgroups=sanity'
+        sh 'mvn test -Psanity'
       }
     }
 
     stage('Regression') {
       steps {
-        sh 'mvn test -Dgroups=regression'
+        sh 'mvn test -Pregression'
       }
     }
   }

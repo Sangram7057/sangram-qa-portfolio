@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Smoke Suite">
+  <test name="Smoke">
+    <classes>
+      <class name="com.sangram.qa.tests.SmokeSuiteTest"/>
+    </classes>
+  </test>
+</suite>
