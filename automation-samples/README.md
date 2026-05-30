@@ -12,13 +12,17 @@ This folder contains public-safe QA automation examples that reflect the kinds o
 ## Included Samples
 
 - `playwright-framework/`
-  Mini Playwright framework sample with config, page objects, grouped tests, MCP server, and Jenkinsfile
+  Mini Playwright framework sample with config, page objects, reusable workflows, tag-driven scenario tests, MCP server, and Jenkinsfile
 - `selenium-framework/`
   Hybrid Selenium WebDriver and TestNG framework sample with POM, Excel/JSON/CSV data, Log4j logging, Allure and Extent reporting, and CI samples
 - `restassured-framework/`
   Hybrid Rest Assured and TestNG framework sample with POJO serialization, shared API specs, Allure plus Extent reporting, SLF4J logging, reusable clients, and CI pipeline samples
-- `playwright-framework/tests/smoke/playwright-smoke.spec.ts`
-  Framework-based Playwright smoke flow covering login, dashboard visibility, and sign-out
+- `playwright-framework/tests/LoginTest.spec.ts`
+  Framework-based Playwright smoke scenario for valid login and dashboard landing
+- `playwright-framework/tests/AuthenticationTest.spec.ts`
+  Framework-based Playwright sanity scenario for end-to-end authentication coverage
+- `playwright-framework/tests/AccountsTest.spec.ts`
+  Framework-based Playwright module test with tagged sanity and regression scenarios for account search coverage
 - `playwright-framework/mcp/playwright-mcp-server.ts`
   Framework-based MCP server that exposes Playwright smoke automation as MCP tools
 - `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`

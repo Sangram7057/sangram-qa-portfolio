@@ -2,12 +2,7 @@ import { McpServer } from "@modelcontextprotocol/server";
 import { StdioServerTransport } from "@modelcontextprotocol/server/stdio";
 import { chromium, Page } from "playwright";
 import * as z from "zod/v4";
-import { env } from "../src/config/env";
-import { users } from "../src/data/test-users";
-import { AccountsPage } from "../src/pages/AccountsPage";
-import { DashboardPage } from "../src/pages/DashboardPage";
-import { LoginPage } from "../src/pages/LoginPage";
-import { TransactionsPage } from "../src/pages/TransactionsPage";
+import { runAccountsTransactionsFlow, runAuthenticationFlow, runDashboardSmokeFlow } from "../src/workflows/mcpFlows";
 
 const server = new McpServer({
   name: "playwright-qa-framework-server",
@@ -33,14 +28,9 @@ server.registerTool(
   },
   async () => {
     const text = await withPage(async (page) => {
-      const loginPage = new LoginPage(page);
-      const dashboardPage = new DashboardPage(page);
+      const result = await runDashboardSmokeFlow(page, []);
 
-      await loginPage.open(env.baseUrl);
-      await loginPage.login(users.validUser.username, users.validUser.password);
-      await dashboardPage.expectLoaded();
-
-      return "Smoke suite completed: login and dashboard summary validated.";
+      return `Smoke suite completed: ${result.checks.join("; ")}`;
     });
 
     return { content: [{ type: "text", text }] };
@@ -55,16 +45,10 @@ server.registerTool(
   },
   async () => {
     const text = await withPage(async (page) => {
-      const loginPage = new LoginPage(page);
-      const dashboardPage = new DashboardPage(page);
+      const checks: string[] = [];
+      await runAuthenticationFlow(page, checks);
 
-      await loginPage.open(env.baseUrl);
-      await loginPage.login(users.validUser.username, users.validUser.password);
-      await dashboardPage.expectLoaded();
-      await dashboardPage.signOut();
-      await loginPage.expectVisible();
-
-      return "Sanity suite completed: authentication critical path validated.";
+      return `Sanity suite completed: ${checks.join("; ")}`;
     });
 
     return { content: [{ type: "text", text }] };
@@ -79,22 +63,10 @@ server.registerTool(
   },
   async () => {
     const text = await withPage(async (page) => {
-      const loginPage = new LoginPage(page);
-      const dashboardPage = new DashboardPage(page);
-      const accountsPage = new AccountsPage(page);
-      const transactionsPage = new TransactionsPage(page);
+      const checks: string[] = [];
+      await runAccountsTransactionsFlow(page, checks);
 
-      await loginPage.open(env.baseUrl);
-      await loginPage.login(users.validUser.username, users.validUser.password);
-      await dashboardPage.expectLoaded();
-      await accountsPage.open(env.baseUrl);
-      await accountsPage.search("primary");
-      await accountsPage.expectResultsVisible();
-      await transactionsPage.open(env.baseUrl);
-      await transactionsPage.filterByLast30Days();
-      await transactionsPage.expectFilteredResultsVisible();
-
-      return "Regression suite completed: accounts and transactions flows validated.";
+      return `Regression suite completed: ${checks.join("; ")}`;
     });
 
     return { content: [{ type: "text", text }] };

@@ -8,9 +8,17 @@ export class TransactionsPage {
     await this.page.goto(targetUrl, { waitUntil: "domcontentloaded" });
   }
 
-  async filterByLast30Days() {
-    await this.page.getByLabel("Date range").selectOption("last-30-days");
+  async filterByDateRange(range: string) {
+    await this.page.getByLabel("Date range").selectOption(range);
     await this.page.getByRole("button", { name: "Apply filters" }).click();
+  }
+
+  async filterByLast30Days() {
+    await this.filterByDateRange("last-30-days");
+  }
+
+  async expectDateRange(range: string) {
+    await expect(this.page.getByLabel("Date range")).toHaveValue(range);
   }
 
   async expectFilteredResultsVisible() {

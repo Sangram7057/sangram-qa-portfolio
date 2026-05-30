@@ -8,6 +8,10 @@ export class DashboardPage {
     await expect(this.page.getByTestId("account-summary-card")).toBeVisible();
   }
 
+  async expectNotificationsPanelVisible() {
+    await expect(this.page.getByTestId("notifications-panel")).toBeVisible();
+  }
+
   async signOut() {
     await this.page.getByRole("button", { name: "Open profile menu" }).click();
     await this.page.getByRole("menuitem", { name: "Sign out" }).click();

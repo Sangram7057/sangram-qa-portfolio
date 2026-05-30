@@ -5,9 +5,9 @@
   "description": "Credential-free Playwright automation framework sample with MCP server support.",
   "scripts": {
     "test": "playwright test",
-    "test:smoke": "playwright test tests/smoke",
-    "test:sanity": "playwright test tests/sanity",
-    "test:regression": "playwright test tests/regression",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:sanity": "playwright test --grep @sanity",
+    "test:regression": "playwright test --grep @regression",
     "mcp": "tsx mcp/playwright-qa-framework-server.ts",
     "mcp:smoke": "tsx mcp/playwright-mcp-server.ts",
     "mcp:regression-sanity": "tsx mcp/playwright-mcp-regression-sanity-server.ts"

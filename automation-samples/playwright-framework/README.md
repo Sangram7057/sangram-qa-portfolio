@@ -1,6 +1,6 @@
 # Playwright Framework Sample
 
-This folder demonstrates a mini Playwright automation framework with realistic project structure, reusable page objects, environment configuration, grouped suites, and multiple MCP server samples.
+This folder demonstrates a mini Playwright automation framework with realistic project structure, reusable page objects, environment configuration, module-based scenario tests, tag-driven execution, and multiple MCP server samples.
 
 ## Structure
 
@@ -16,10 +16,18 @@ This folder demonstrates a mini Playwright automation framework with realistic p
   Public-safe test data
 - `src/pages`
   Page Object Model classes
+- `src/workflows`
+  Reusable login, module-navigation, and regression helper flows shared by tests and MCP tools
 - `tests`
-  Smoke, sanity, and regression coverage
-- `tests/smoke/playwright-smoke.spec.ts`
-  Framework-based smoke sample covering login, dashboard widgets, and sign-out
+  Separate module-focused scenario specs tagged with `@smoke`, `@sanity`, and `@regression`
+- `tests/LoginTest.spec.ts`
+  Smoke coverage for valid login and dashboard landing
+- `tests/AuthenticationTest.spec.ts`
+  Sanity coverage for the full authentication critical path
+- `tests/AccountsTest.spec.ts`
+  Tagged sanity and regression scenarios for account search coverage
+- `tests/TransactionsTest.spec.ts`
+  Tagged sanity and regression scenarios for transaction filtering coverage
 - `mcp`
   MCP server sample exposing framework flows as MCP tools
 - `mcp/playwright-mcp-server.ts`
@@ -33,6 +41,7 @@ This folder demonstrates a mini Playwright automation framework with realistic p
 
 ```text
 npm ci
+npm test
 npm run test:smoke
 npm run test:sanity
 npm run test:regression
@@ -45,4 +54,5 @@ npm run mcp:regression-sanity
 
 - No real credentials are stored here
 - URLs and selectors are intentionally generic
+- `npm test` acts as the main entry point and runs all module-based specs
 - This sample is designed to look and read like a practical team framework

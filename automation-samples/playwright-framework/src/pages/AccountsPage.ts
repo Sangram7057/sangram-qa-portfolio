@@ -12,6 +12,10 @@ export class AccountsPage {
     await this.page.getByLabel("Search accounts").fill(term);
   }
 
+  async expectSearchTerm(term: string) {
+    await expect(this.page.getByLabel("Search accounts")).toHaveValue(term);
+  }
+
   async expectResultsVisible() {
     await expect(this.page.getByRole("heading", { name: "Accounts" })).toBeVisible();
     await expect(this.page.getByTestId("account-grid")).toBeVisible();

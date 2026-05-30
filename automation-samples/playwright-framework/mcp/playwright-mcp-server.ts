@@ -3,9 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/server/stdio";
 import { chromium, Page } from "playwright";
 import * as z from "zod/v4";
 import { env } from "../src/config/env";
-import { users } from "../src/data/test-users";
-import { DashboardPage } from "../src/pages/DashboardPage";
-import { LoginPage } from "../src/pages/LoginPage";
+import { capturePublicPage, runDashboardSmokeFlow } from "../src/workflows/mcpFlows";
 
 const server = new McpServer({
   name: "playwright-qa-smoke-server",
@@ -32,48 +30,6 @@ async function withBrowser(
   }
 }
 
-async function runDashboardSmoke(headless: boolean): Promise<SmokeResult> {
-  return withBrowser(headless, async (page, checks) => {
-    const loginPage = new LoginPage(page);
-    const dashboardPage = new DashboardPage(page);
-
-    await loginPage.open(env.baseUrl);
-    checks.push("Login route opened successfully");
-
-    await loginPage.login(users.validUser.username, users.validUser.password);
-    await page.waitForURL("**/dashboard");
-    checks.push("User redirected to dashboard after login");
-
-    await dashboardPage.expectLoaded();
-    checks.push("Dashboard heading and account summary are visible");
-
-    await page.getByTestId("notifications-panel").waitFor();
-    checks.push("Notifications panel is visible");
-
-    return {
-      pageTitle: await page.title(),
-      currentUrl: page.url(),
-      checks,
-    };
-  });
-}
-
-async function capturePublicPage(route: string, headless: boolean): Promise<SmokeResult> {
-  return withBrowser(headless, async (page, checks) => {
-    await page.goto(`${env.baseUrl}${route}`, { waitUntil: "domcontentloaded" });
-    checks.push(`Opened ${route} successfully`);
-
-    const pageTitle = await page.title();
-    checks.push(`Captured title: ${pageTitle}`);
-
-    return {
-      pageTitle,
-      currentUrl: page.url(),
-      checks,
-    };
-  });
-}
-
 server.registerTool(
   "run_dashboard_smoke",
   {
@@ -84,7 +40,9 @@ server.registerTool(
     }),
   },
   async ({ headless }) => {
-    const result = await runDashboardSmoke(headless);
+    const result = await withBrowser(headless, async (page, checks) =>
+      runDashboardSmokeFlow(page, checks)
+    );
 
     return {
       content: [
@@ -114,7 +72,9 @@ server.registerTool(
     }),
   },
   async ({ route, headless }) => {
-    const result = await capturePublicPage(route, headless);
+    const result = await withBrowser(headless, async (page, checks) =>
+      capturePublicPage(page, checks, route, env.baseUrl)
+    );
 
     return {
       content: [
