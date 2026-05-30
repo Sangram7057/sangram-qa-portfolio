@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "playwright-qa-smoke-server": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["./build/playwright-mcp-server.js"],
+      "env": {
+        "BASE_URL": "https://example.test-app.local",
+        "TEST_USERNAME": "demo.user",
+        "TEST_PASSWORD": "replace-me"
+      }
+    }
+  }
+}

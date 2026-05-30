@@ -59,6 +59,7 @@ I am a Software Test Engineer with 4+ years of experience in automation and manu
 This portfolio also includes public-safe automation code examples in [automation-samples](./automation-samples):
 
 - Playwright smoke coverage example
+- Playwright MCP server example
 - Selenium WebDriver and TestNG login smoke test
 - Rest Assured API contract validation sample
 
