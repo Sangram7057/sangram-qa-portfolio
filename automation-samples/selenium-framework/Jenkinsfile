@@ -1,0 +1,21 @@
+pipeline {
+  agent any
+
+  tools {
+    maven 'maven-3'
+  }
+
+  stages {
+    stage('Sanity') {
+      steps {
+        sh 'mvn test -Dgroups=sanity'
+      }
+    }
+
+    stage('Regression') {
+      steps {
+        sh 'mvn test -Dgroups=regression'
+      }
+    }
+  }
+}

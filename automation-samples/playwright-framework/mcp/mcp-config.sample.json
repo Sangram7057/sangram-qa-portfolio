@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "playwright-qa-framework-server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["tsx", "mcp/playwright-qa-framework-server.ts"],
+      "env": {
+        "BASE_URL": "https://example.test-app.local",
+        "TEST_USERNAME": "demo.user",
+        "TEST_PASSWORD": "replace-me"
+      }
+    }
+  }
+}

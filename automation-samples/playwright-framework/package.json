@@ -1,0 +1,22 @@
+{
+  "name": "playwright-qa-framework-sample",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Credential-free Playwright automation framework sample with MCP server support.",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test tests/smoke",
+    "test:sanity": "playwright test tests/sanity",
+    "test:regression": "playwright test tests/regression",
+    "mcp": "tsx mcp/playwright-qa-framework-server.ts"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/server": "^1.0.0",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "dotenv": "^16.4.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "zod": "^3.24.1"
+  }
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="QA Framework Sample Suite">
+  <test name="Sanity and Regression">
+    <groups>
+      <run>
+        <include name="sanity"/>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.sangram.qa.tests.SanitySuiteTest"/>
+      <class name="com.sangram.qa.tests.RegressionSuiteTest"/>
+    </classes>
+  </test>
+</suite>

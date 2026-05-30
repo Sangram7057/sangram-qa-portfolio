@@ -1,0 +1,29 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Install') {
+      steps {
+        sh 'npm ci'
+      }
+    }
+
+    stage('Smoke') {
+      steps {
+        sh 'npm run test:smoke'
+      }
+    }
+
+    stage('Sanity') {
+      steps {
+        sh 'npm run test:sanity'
+      }
+    }
+
+    stage('Regression') {
+      steps {
+        sh 'npm run test:regression'
+      }
+    }
+  }
+}

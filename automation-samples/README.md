@@ -11,6 +11,10 @@ This folder contains public-safe QA automation examples that reflect the kinds o
 
 ## Included Samples
 
+- `playwright-framework/`
+  Mini Playwright framework sample with config, page objects, grouped tests, MCP server, and Jenkinsfile
+- `selenium-framework/`
+  Mini Selenium WebDriver and TestNG framework sample with Maven, page objects, grouped suites, and Jenkinsfile
 - `playwright-smoke.spec.ts`
   Example Playwright smoke flow using environment variables for login data
 - `playwright-mcp-server.ts`
