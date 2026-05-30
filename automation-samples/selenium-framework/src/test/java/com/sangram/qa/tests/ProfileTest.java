@@ -8,7 +8,7 @@ import com.sangram.qa.utilities.TestDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProfileRegressionTest extends AuthenticatedTestBase {
+public class ProfileTest extends AuthenticatedTestBase {
     @Test(
         groups = {"regression"},
         dataProvider = "accountSearchCsvData",

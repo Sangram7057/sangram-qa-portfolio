@@ -8,7 +8,7 @@ import com.sangram.qa.utilities.TestDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AuthenticationSanityTest extends AuthenticatedTestBase {
+public class AuthenticationTest extends AuthenticatedTestBase {
     @Test(
         groups = {"sanity"},
         dataProvider = "loginJsonData",

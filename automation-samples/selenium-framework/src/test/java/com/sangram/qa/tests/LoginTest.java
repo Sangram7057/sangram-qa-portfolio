@@ -7,17 +7,17 @@ import com.sangram.qa.utilities.TestDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DashboardSmokeTest extends AuthenticatedTestBase {
+public class LoginTest extends AuthenticatedTestBase {
     @Test(
         groups = {"smoke"},
         dataProvider = "loginExcelData",
         dataProviderClass = TestDataProviders.class,
-        description = "Validate dashboard summary widgets are visible after login."
+        description = "Validate that a valid user can sign in and land on the dashboard."
     )
-    public void dashboardWidgetsAreVisibleAfterLogin(LoginScenario scenario) {
+    public void validUserCanLoginToDashboard(LoginScenario scenario) {
         DashboardPage dashboardPage = loginToDashboard(scenario);
 
-        Assert.assertTrue(dashboardPage.accountSummaryVisible(), "Account summary card should be visible.");
-        Assert.assertTrue(dashboardPage.notificationsPanelVisible(), "Notifications panel should be visible.");
+        Assert.assertTrue(driver.getCurrentUrl().contains(scenario.expectedUrlFragment()));
+        Assert.assertEquals(dashboardPage.titleText(), scenario.dashboardTitle());
     }
 }

@@ -8,7 +8,7 @@ import com.sangram.qa.utilities.TestDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LogoutSmokeTest extends AuthenticatedTestBase {
+public class LogoutTest extends AuthenticatedTestBase {
     @Test(
         groups = {"smoke"},
         dataProvider = "loginExcelData",

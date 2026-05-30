@@ -64,9 +64,9 @@ This portfolio also includes public-safe automation code examples in [automation
 - Framework-based Playwright MCP sanity and regression server under `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`
 - Selenium hybrid framework sample with Page Object Model classes, Excel/JSON/CSV-driven data, Log4j logging, Allure and Extent reporting, and CI samples
 - Selenium master suite under `selenium-framework/master.xml` for running all tagged scenario classes
-- Framework-based Selenium smoke scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/LoginSmokeTest.java`
-- Framework-based Selenium sanity scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/AuthenticationSanityTest.java`
-- Framework-based Selenium regression scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/AccountsRegressionTest.java`
+- Framework-based Selenium smoke scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/LoginTest.java`
+- Framework-based Selenium sanity scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/AuthenticationTest.java`
+- Framework-based Selenium regression scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/AccountsTest.java`
 - Rest Assured hybrid framework sample with POJO serialization, shared request specs, reusable clients, Allure plus Extent reporting, SLF4J logging, and CI pipeline samples
 - Framework-based Rest Assured smoke suite under `restassured-framework/src/test/java/com/sangram/api/tests/SmokeSuiteTest.java`
 - Framework-based Rest Assured sanity suite under `restassured-framework/src/test/java/com/sangram/api/tests/SanitySuiteTest.java`

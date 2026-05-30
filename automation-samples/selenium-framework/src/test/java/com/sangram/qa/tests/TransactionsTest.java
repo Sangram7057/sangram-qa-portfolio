@@ -8,7 +8,23 @@ import com.sangram.qa.utilities.TestDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TransactionsRegressionTest extends AuthenticatedTestBase {
+public class TransactionsTest extends AuthenticatedTestBase {
+    @Test(
+        groups = {"sanity"},
+        dataProvider = "accountSearchCsvData",
+        dataProviderClass = TestDataProviders.class,
+        description = "Validate that critical transaction filter scenarios return a visible table."
+    )
+    public void transactionDateFilterShowsVisibleResults(AccountSearchScenario scenario) {
+        loginWithDefaultUser();
+        TransactionsPage transactionsPage = new TransactionsPage(driver, waitHelper);
+
+        transactionsPage.open(ConfigReader.baseUrl());
+        transactionsPage.filterByDateRange(scenario.dateRange());
+
+        Assert.assertTrue(transactionsPage.tableVisible(), "Transactions table should be visible after filtering.");
+    }
+
     @Test(
         groups = {"regression"},
         dataProvider = "accountSearchCsvData",
