@@ -61,7 +61,7 @@ git init
 git add .
 git commit -m "Add QA automation portfolio website and case studies"
 git branch -M main
-git remote add origin https://github.com/Sangram231116/sangram-qa-portfolio.git
+git remote add origin https://github.com/Sangram7057/sangram-qa-portfolio.git
 git push -u origin main
 ```
 
@@ -78,16 +78,16 @@ git push -u origin main
 
 Your live site will usually be:
 
-`https://sangram231116.github.io/sangram-qa-portfolio/`
+`https://sangram7057.github.io/sangram-qa-portfolio/`
 
 ## 6. Add This Link To Upwork
 
 Use both links in your profile:
 
 - GitHub repository:
-  `https://github.com/Sangram231116/sangram-qa-portfolio`
+  `https://github.com/Sangram7057/sangram-qa-portfolio`
 - Live portfolio:
-  `https://sangram231116.github.io/sangram-qa-portfolio/`
+  `https://sangram7057.github.io/sangram-qa-portfolio/`
 
 ## 7. Optional GitHub Profile README
 
@@ -95,8 +95,8 @@ If you want a profile page too:
 
 1. Create a new public repository with the exact same name as your username
 2. Example:
-   - username: `Sangram231116`
-   - repo name: `Sangram231116`
+   - username: `Sangram7057`
+   - repo name: `Sangram7057`
 3. Copy content from:
 
 `GITHUB_PROFILE_TEMPLATE.md`

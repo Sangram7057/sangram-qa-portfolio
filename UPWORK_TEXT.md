@@ -2,8 +2,8 @@
 
 Use these links after publishing:
 
-- Live portfolio: `https://sangram231116.github.io/sangram-qa-portfolio/`
-- GitHub repository: `https://github.com/Sangram231116/sangram-qa-portfolio`
+- Live portfolio: `https://sangram7057.github.io/sangram-qa-portfolio/`
+- GitHub repository: `https://github.com/Sangram7057/sangram-qa-portfolio`
 
 ## Portfolio Title
 
@@ -19,8 +19,8 @@ Software Test Engineer with 4+ years of experience in manual and automation test
 
 Portfolio links:
 
-- Live portfolio: `https://sangram231116.github.io/sangram-qa-portfolio/`
-- GitHub repository: `https://github.com/Sangram231116/sangram-qa-portfolio`
+- Live portfolio: `https://sangram7057.github.io/sangram-qa-portfolio/`
+- GitHub repository: `https://github.com/Sangram7057/sangram-qa-portfolio`
 
 ## Upwork Project Catalog Or Attachment Description
 
@@ -28,4 +28,4 @@ Public GitHub portfolio with QA case studies, testing templates, and sample deli
 
 ## Short Proposal Line
 
-You can also review my public GitHub QA portfolio here: `https://sangram231116.github.io/sangram-qa-portfolio/`
+You can also review my public GitHub QA portfolio here: `https://sangram7057.github.io/sangram-qa-portfolio/`
