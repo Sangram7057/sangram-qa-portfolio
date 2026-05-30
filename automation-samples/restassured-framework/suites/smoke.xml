@@ -3,6 +3,7 @@
   <listeners>
     <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     <listener class-name="com.sangram.api.listeners.ApiTestListener"/>
+    <listener class-name="com.sangram.api.listeners.ExtentReportManager"/>
   </listeners>
   <test name="Smoke">
     <classes>

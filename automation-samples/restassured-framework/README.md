@@ -1,6 +1,6 @@
 # Rest Assured Framework Sample
 
-This folder demonstrates a hybrid Rest Assured and TestNG API automation framework with shared request specifications, POJO serialization, reusable API clients, reporting, structured logging, and CI sample files.
+This folder demonstrates a hybrid Rest Assured and TestNG API automation framework with shared request specifications, POJO serialization, reusable API clients, Allure and Extent reporting, structured logging, and CI sample files.
 
 ## Structure
 
@@ -27,7 +27,7 @@ This folder demonstrates a hybrid Rest Assured and TestNG API automation framewo
 - `src/test/java/.../filters`
   SLF4J-backed request and response logging
 - `src/test/java/.../listeners`
-  TestNG listener for Allure attachments and lifecycle logging
+  TestNG listeners for Allure attachments, Extent report lifecycle, and execution logging
 - `src/test/java/.../models`
   Request and response POJO classes for Jackson serialization
 - `src/test/java/.../specs`
@@ -57,4 +57,4 @@ mvn allure:serve
 
 - No client credentials are stored in this repository
 - URLs, IDs, and payload assumptions are generic placeholders
-- The framework uses shared request specs, Jackson-based POJO serialization, reusable API clients, Allure reporting, SLF4J logging, and grouped TestNG suites to mirror real API automation work
+- The framework uses shared request specs, Jackson-based POJO serialization, reusable API clients, Allure plus Extent reporting, SLF4J logging, and grouped TestNG suites to mirror real API automation work

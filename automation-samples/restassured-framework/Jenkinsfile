@@ -30,6 +30,7 @@ pipeline {
     always {
       junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
       archiveArtifacts allowEmptyArchive: true, artifacts: 'target/allure-results/**/*'
+      archiveArtifacts allowEmptyArchive: true, artifacts: 'target/extent-report/**/*'
     }
   }
 }

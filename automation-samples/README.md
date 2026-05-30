@@ -16,7 +16,7 @@ This folder contains public-safe QA automation examples that reflect the kinds o
 - `selenium-framework/`
   Hybrid Selenium WebDriver and TestNG framework sample with POM, Excel/JSON/CSV data, Log4j logging, Allure and Extent reporting, and CI samples
 - `restassured-framework/`
-  Hybrid Rest Assured and TestNG framework sample with POJO serialization, shared API specs, Allure reporting, SLF4J logging, reusable clients, and CI pipeline samples
+  Hybrid Rest Assured and TestNG framework sample with POJO serialization, shared API specs, Allure plus Extent reporting, SLF4J logging, reusable clients, and CI pipeline samples
 - `playwright-framework/tests/smoke/playwright-smoke.spec.ts`
   Framework-based Playwright smoke flow covering login, dashboard visibility, and sign-out
 - `playwright-framework/mcp/playwright-mcp-server.ts`
