@@ -12,5 +12,9 @@ export default defineConfig({
     video: "retain-on-failure",
     headless: true,
   },
-  reporter: [["list"], ["html", { open: "never" }]],
+  reporter: [
+    ["list"],
+    ["html", { open: "never", outputFolder: "test-results/playwright-html" }],
+    ["./src/listeners/PlaywrightExecutionListener.ts"],
+  ],
 });

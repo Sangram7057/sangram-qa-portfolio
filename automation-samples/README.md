@@ -12,7 +12,7 @@ This folder contains public-safe QA automation examples that reflect the kinds o
 ## Included Samples
 
 - `playwright-framework/`
-  Mini Playwright framework sample with config, page objects, reusable workflows, tag-driven scenario tests, MCP server, and Jenkinsfile
+  Mini Playwright framework sample with config, utility helpers, listener-style reporting, page objects, reusable workflows, tag-driven scenario tests, MCP server, and Jenkinsfile
 - `selenium-framework/`
   Hybrid Selenium WebDriver and TestNG framework sample with POM, Excel/JSON/CSV data, Log4j logging, Allure and Extent reporting, and CI samples
 - `restassured-framework/`

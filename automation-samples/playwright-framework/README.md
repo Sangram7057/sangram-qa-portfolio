@@ -1,6 +1,6 @@
 # Playwright Framework Sample
 
-This folder demonstrates a mini Playwright automation framework with realistic project structure, reusable page objects, environment configuration, module-based scenario tests, tag-driven execution, and multiple MCP server samples.
+This folder demonstrates a mini Playwright automation framework with realistic project structure, reusable page objects, environment configuration, utility helpers, listener-style reporting, module-based scenario tests, tag-driven execution, and multiple MCP server samples.
 
 ## Structure
 
@@ -14,8 +14,12 @@ This folder demonstrates a mini Playwright automation framework with realistic p
   Environment loading and shared configuration
 - `src/data`
   Public-safe test data
+- `src/listeners`
+  Custom Playwright execution listener implemented through the Reporter API
 - `src/pages`
   Page Object Model classes
+- `src/utils`
+  Shared utilities for tags, artifact directories, timestamps, and report output helpers
 - `src/workflows`
   Reusable login, module-navigation, and regression helper flows shared by tests and MCP tools
 - `tests`
@@ -36,6 +40,8 @@ This folder demonstrates a mini Playwright automation framework with realistic p
   Framework-based MCP server with separate sanity and regression tools
 - `Jenkinsfile`
   CI pipeline sample
+- `test-results/listener-artifacts`
+  Listener-generated execution summaries written per run
 
 ## Example Commands
 
@@ -55,4 +61,5 @@ npm run mcp:regression-sanity
 - No real credentials are stored here
 - URLs and selectors are intentionally generic
 - `npm test` acts as the main entry point and runs all module-based specs
+- Playwright uses a custom reporter as the closest equivalent to a TestNG-style listener
 - This sample is designed to look and read like a practical team framework

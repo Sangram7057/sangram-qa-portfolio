@@ -58,7 +58,7 @@ I am a Software Test Engineer with 4+ years of experience in automation and manu
 
 This portfolio also includes public-safe automation code examples in [automation-samples](./automation-samples):
 
-- Playwright mini framework sample with page objects, config, MCP server, and Jenkinsfile
+- Playwright mini framework sample with page objects, utility helpers, listener-style reporting, config, MCP server, and Jenkinsfile
 - Framework-based Playwright scenario coverage under `playwright-framework/tests/LoginTest.spec.ts`
 - Framework-based Playwright sanity coverage under `playwright-framework/tests/AuthenticationTest.spec.ts`
 - Framework-based Playwright tagged module coverage under `playwright-framework/tests/AccountsTest.spec.ts`
