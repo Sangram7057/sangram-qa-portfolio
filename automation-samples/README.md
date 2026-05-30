@@ -15,6 +15,8 @@ This folder contains public-safe QA automation examples that reflect the kinds o
   Mini Playwright framework sample with config, page objects, grouped tests, MCP server, and Jenkinsfile
 - `selenium-framework/`
   Mini Selenium WebDriver and TestNG framework sample with Maven, page objects, grouped suites, and Jenkinsfile
+- `restassured-framework/`
+  Mini Rest Assured and TestNG framework sample with shared API specs, reusable clients, grouped suites, and Jenkinsfile
 - `playwright-framework/tests/smoke/playwright-smoke.spec.ts`
   Framework-based Playwright smoke flow covering login, dashboard visibility, and sign-out
 - `playwright-framework/mcp/playwright-mcp-server.ts`
@@ -27,8 +29,12 @@ This folder contains public-safe QA automation examples that reflect the kinds o
   Framework-based Selenium sanity flow for authentication and dashboard validation
 - `selenium-framework/src/test/java/com/sangram/qa/tests/RegressionSuiteTest.java`
   Framework-based Selenium regression flow across accounts, transactions, and profile checks
-- `restassured-account-summary-test.java`
-  Example Rest Assured API test using a bearer token from the environment
+- `restassured-framework/src/test/java/com/sangram/api/tests/SmokeSuiteTest.java`
+  Framework-based Rest Assured smoke coverage for account summary contract validation
+- `restassured-framework/src/test/java/com/sangram/api/tests/SanitySuiteTest.java`
+  Framework-based Rest Assured sanity coverage for account details and transaction filters
+- `restassured-framework/src/test/java/com/sangram/api/tests/RegressionSuiteTest.java`
+  Framework-based Rest Assured regression coverage for customer profile and negative API contracts
 - `playwright-framework/mcp/mcp-config.sample.json`
   Framework-level MCP host configuration for connecting Playwright framework servers over stdio
 

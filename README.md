@@ -66,6 +66,9 @@ This portfolio also includes public-safe automation code examples in [automation
 - Framework-based Selenium smoke suite under `selenium-framework/src/test/java/com/sangram/qa/tests/SmokeSuiteTest.java`
 - Framework-based Selenium sanity suite under `selenium-framework/src/test/java/com/sangram/qa/tests/SanitySuiteTest.java`
 - Framework-based Selenium regression suite under `selenium-framework/src/test/java/com/sangram/qa/tests/RegressionSuiteTest.java`
-- Rest Assured API contract validation sample
+- Rest Assured mini framework sample with shared request specs, reusable clients, grouped suites, and Jenkinsfile
+- Framework-based Rest Assured smoke suite under `restassured-framework/src/test/java/com/sangram/api/tests/SmokeSuiteTest.java`
+- Framework-based Rest Assured sanity suite under `restassured-framework/src/test/java/com/sangram/api/tests/SanitySuiteTest.java`
+- Framework-based Rest Assured regression suite under `restassured-framework/src/test/java/com/sangram/api/tests/RegressionSuiteTest.java`
 
 All examples avoid hardcoded credentials and use environment variables or placeholders instead.
