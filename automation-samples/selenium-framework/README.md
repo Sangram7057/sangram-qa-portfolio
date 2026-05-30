@@ -6,10 +6,10 @@ This folder demonstrates a hybrid Selenium WebDriver and TestNG framework with P
 
 - `pom.xml`
   Maven dependencies, reporting plugins, build settings, and execution profiles
-- `testng.xml`
-  Default suite definition covering smoke, sanity, and regression
+- `master.xml`
+  Default suite definition that runs all tagged Selenium scenario classes
 - `suites`
-  Separate suite XML files for smoke, sanity, and regression runs
+  Separate suite XML files that filter `smoke`, `sanity`, and `regression` tags from the same scenario classes
 - `.env.example`
   Placeholder environment variables including headless execution
 - `ci`
@@ -25,7 +25,7 @@ This folder demonstrates a hybrid Selenium WebDriver and TestNG framework with P
 - `src/test/java/.../utilities`
   Config reader, Excel/JSON/CSV readers, screenshots, reporting, waits, and data providers
 - `src/test/java/.../tests`
-  Smoke, sanity, and regression suite classes using data providers
+  Separate scenario-based smoke, sanity, and regression test classes using data providers
 - `src/test/resources`
   `config.properties`, `log4j2.xml`, `allure.properties`, JSON/CSV data, and `testdata.xlsx`
 - `Jenkinsfile`
@@ -38,6 +38,7 @@ mvn test -Psmoke
 mvn test -Psanity
 mvn test -Pregression
 mvn test
+mvn test -DsuiteXmlFile=master.xml
 mvn allure:serve
 ```
 
@@ -45,4 +46,4 @@ mvn allure:serve
 
 - No client credentials are stored in this repository
 - URLs and locators are generic placeholders
-- The framework uses Page Object Model classes, Excel/JSON/CSV-driven test data, Log4j logging, Allure and Extent reporting, and CI-friendly suite XMLs to mirror real project structure
+- The framework uses Page Object Model classes, Excel/JSON/CSV-driven test data, separate scenario-based test classes, Log4j logging, Allure and Extent reporting, and a `master.xml` plus group-filtered suite XMLs to mirror real project structure

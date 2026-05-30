@@ -1,0 +1,27 @@
+package com.sangram.qa.tests;
+
+import com.sangram.qa.base.AuthenticatedTestBase;
+import com.sangram.qa.models.AccountSearchScenario;
+import com.sangram.qa.pages.TransactionsPage;
+import com.sangram.qa.utilities.ConfigReader;
+import com.sangram.qa.utilities.TestDataProviders;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TransactionsSanityTest extends AuthenticatedTestBase {
+    @Test(
+        groups = {"sanity"},
+        dataProvider = "accountSearchCsvData",
+        dataProviderClass = TestDataProviders.class,
+        description = "Validate that critical transaction filter scenarios return a visible table."
+    )
+    public void transactionDateFilterShowsVisibleResults(AccountSearchScenario scenario) {
+        loginWithDefaultUser();
+        TransactionsPage transactionsPage = new TransactionsPage(driver, waitHelper);
+
+        transactionsPage.open(ConfigReader.baseUrl());
+        transactionsPage.filterByDateRange(scenario.dateRange());
+
+        Assert.assertTrue(transactionsPage.tableVisible(), "Transactions table should be visible after filtering.");
+    }
+}

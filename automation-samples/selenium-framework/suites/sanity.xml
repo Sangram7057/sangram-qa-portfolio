@@ -4,9 +4,14 @@
     <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     <listener class-name="com.sangram.qa.listeners.TestListener"/>
   </listeners>
-  <test name="Sanity">
-    <classes>
-      <class name="com.sangram.qa.tests.SanitySuiteTest"/>
-    </classes>
+  <test name="Sanity Tagged Scenarios">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.sangram.qa.tests"/>
+    </packages>
   </test>
 </suite>

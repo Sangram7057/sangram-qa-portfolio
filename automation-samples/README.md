@@ -23,12 +23,14 @@ This folder contains public-safe QA automation examples that reflect the kinds o
   Framework-based MCP server that exposes Playwright smoke automation as MCP tools
 - `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`
   Framework-based MCP server that exposes Playwright sanity and regression suites as MCP tools
-- `selenium-framework/src/test/java/com/sangram/qa/tests/SmokeSuiteTest.java`
-  Framework-based Selenium smoke flow using Excel-driven login data and report-ready listener support
-- `selenium-framework/src/test/java/com/sangram/qa/tests/SanitySuiteTest.java`
-  Framework-based Selenium sanity flow using JSON-driven login scenarios
-- `selenium-framework/src/test/java/com/sangram/qa/tests/RegressionSuiteTest.java`
-  Framework-based Selenium regression flow using CSV-driven account search and filter data
+- `selenium-framework/master.xml`
+  Master TestNG suite that runs all Selenium scenario classes and supports tag-based execution
+- `selenium-framework/src/test/java/com/sangram/qa/tests/LoginSmokeTest.java`
+  Framework-based Selenium smoke scenario for valid login and dashboard landing
+- `selenium-framework/src/test/java/com/sangram/qa/tests/AuthenticationSanityTest.java`
+  Framework-based Selenium sanity scenario for end-to-end sign in and sign out validation
+- `selenium-framework/src/test/java/com/sangram/qa/tests/AccountsRegressionTest.java`
+  Framework-based Selenium regression scenario for account search and title validation
 - `restassured-framework/src/test/java/com/sangram/api/tests/SmokeSuiteTest.java`
   Framework-based Rest Assured smoke coverage for account summary contract validation
 - `restassured-framework/src/test/java/com/sangram/api/tests/SanitySuiteTest.java`
