@@ -5,23 +5,31 @@ pipeline {
     maven 'maven-3'
   }
 
+  parameters {
+    choice(name: 'SUITE', choices: ['smoke', 'sanity', 'regression', 'all'], description: 'Select the Selenium suite to run')
+  }
+
   stages {
-    stage('Smoke') {
+    stage('Build') {
       steps {
-        sh 'mvn test -Psmoke'
+        sh 'mvn -q test-compile'
       }
     }
 
-    stage('Sanity') {
+    stage('UI Suite') {
       steps {
-        sh 'mvn test -Psanity'
+        script {
+          def command = params.SUITE == 'all' ? 'mvn test' : "mvn test -P${params.SUITE}"
+          sh command
+        }
       }
     }
+  }
 
-    stage('Regression') {
-      steps {
-        sh 'mvn test -Pregression'
-      }
+  post {
+    always {
+      junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
+      archiveArtifacts allowEmptyArchive: true, artifacts: 'target/extent-report/**/*,target/allure-results/**/*,target/screenshots/**/*'
     }
   }
 }

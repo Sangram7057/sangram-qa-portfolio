@@ -14,7 +14,7 @@ This folder contains public-safe QA automation examples that reflect the kinds o
 - `playwright-framework/`
   Mini Playwright framework sample with config, page objects, grouped tests, MCP server, and Jenkinsfile
 - `selenium-framework/`
-  Mini Selenium WebDriver and TestNG framework sample with Maven, page objects, grouped suites, and Jenkinsfile
+  Hybrid Selenium WebDriver and TestNG framework sample with POM, Excel/JSON/CSV data, Log4j logging, Allure and Extent reporting, and CI samples
 - `restassured-framework/`
   Hybrid Rest Assured and TestNG framework sample with POJO serialization, shared API specs, Allure reporting, SLF4J logging, reusable clients, and CI pipeline samples
 - `playwright-framework/tests/smoke/playwright-smoke.spec.ts`
@@ -24,11 +24,11 @@ This folder contains public-safe QA automation examples that reflect the kinds o
 - `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`
   Framework-based MCP server that exposes Playwright sanity and regression suites as MCP tools
 - `selenium-framework/src/test/java/com/sangram/qa/tests/SmokeSuiteTest.java`
-  Framework-based Selenium smoke flow covering login, dashboard widgets, and sign-out
+  Framework-based Selenium smoke flow using Excel-driven login data and report-ready listener support
 - `selenium-framework/src/test/java/com/sangram/qa/tests/SanitySuiteTest.java`
-  Framework-based Selenium sanity flow for authentication and dashboard validation
+  Framework-based Selenium sanity flow using JSON-driven login scenarios
 - `selenium-framework/src/test/java/com/sangram/qa/tests/RegressionSuiteTest.java`
-  Framework-based Selenium regression flow across accounts, transactions, and profile checks
+  Framework-based Selenium regression flow using CSV-driven account search and filter data
 - `restassured-framework/src/test/java/com/sangram/api/tests/SmokeSuiteTest.java`
   Framework-based Rest Assured smoke coverage for account summary contract validation
 - `restassured-framework/src/test/java/com/sangram/api/tests/SanitySuiteTest.java`

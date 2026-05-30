@@ -1,0 +1,3 @@
+scenarioName,searchTerm,dateRange,expectedAccountsTitle,expectedProfileTitle
+Primary account search,primary,last-30-days,Accounts,Profile
+Savings account search,savings,last-90-days,Accounts,Profile

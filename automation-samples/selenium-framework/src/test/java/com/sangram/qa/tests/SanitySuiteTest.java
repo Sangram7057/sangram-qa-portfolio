@@ -1,25 +1,32 @@
 package com.sangram.qa.tests;
 
-import com.sangram.qa.base.TestBase;
-import com.sangram.qa.config.EnvConfig;
-import com.sangram.qa.data.TestUsers;
+import com.sangram.qa.base.BaseTest;
+import com.sangram.qa.models.LoginScenario;
 import com.sangram.qa.pages.DashboardPage;
 import com.sangram.qa.pages.LoginPage;
+import com.sangram.qa.utilities.ConfigReader;
+import com.sangram.qa.utilities.TestDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SanitySuiteTest extends TestBase {
-    @Test(groups = {"sanity"})
-    public void criticalAuthJourneyWorks() {
+public class SanitySuiteTest extends BaseTest {
+    @Test(
+        groups = {"sanity"},
+        dataProvider = "loginJsonData",
+        dataProviderClass = TestDataProviders.class,
+        description = "Validate the critical authentication journey using JSON-driven scenarios."
+    )
+    public void criticalAuthJourneyWorks(LoginScenario scenario) {
         LoginPage loginPage = new LoginPage(driver, waitHelper);
         DashboardPage dashboardPage = new DashboardPage(driver, waitHelper);
 
-        loginPage.open(EnvConfig.baseUrl());
-        loginPage.login(TestUsers.validUser().username(), TestUsers.validUser().password());
-        waitHelper.urlContains("/dashboard");
+        logger.info("Running sanity scenario {}", scenario.scenarioName());
+        loginPage.open(ConfigReader.baseUrl());
+        loginPage.login(scenario.username(), scenario.password());
+        waitHelper.urlContains(scenario.expectedUrlFragment());
         dashboardPage.waitUntilLoaded();
 
-        Assert.assertEquals(dashboardPage.titleText(), "Dashboard");
+        Assert.assertEquals(dashboardPage.titleText(), scenario.dashboardTitle());
         Assert.assertTrue(dashboardPage.accountSummaryVisible());
 
         dashboardPage.signOut();

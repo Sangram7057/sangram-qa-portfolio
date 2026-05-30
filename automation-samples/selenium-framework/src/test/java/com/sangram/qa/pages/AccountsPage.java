@@ -1,6 +1,6 @@
 package com.sangram.qa.pages;
 
-import com.sangram.qa.utils.WaitHelper;
+import com.sangram.qa.utilities.WaitHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -26,6 +26,7 @@ public class AccountsPage {
     }
 
     public void search(String value) {
+        waitHelper.visible(searchBox).clear();
         waitHelper.visible(searchBox).sendKeys(value);
     }
 

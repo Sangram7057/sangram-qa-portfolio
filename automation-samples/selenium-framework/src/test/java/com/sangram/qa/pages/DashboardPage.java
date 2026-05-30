@@ -1,11 +1,10 @@
 package com.sangram.qa.pages;
 
-import com.sangram.qa.utils.WaitHelper;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import com.sangram.qa.utilities.WaitHelper;
 
 public class DashboardPage {
-    private final WebDriver driver;
     private final WaitHelper waitHelper;
 
     private final By title = By.cssSelector("[data-testid='dashboard-title']");
@@ -15,7 +14,6 @@ public class DashboardPage {
     private final By signOut = By.cssSelector("[data-testid='sign-out']");
 
     public DashboardPage(WebDriver driver, WaitHelper waitHelper) {
-        this.driver = driver;
         this.waitHelper = waitHelper;
     }
 

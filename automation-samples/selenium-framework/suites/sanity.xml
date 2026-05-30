@@ -1,5 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Selenium Sanity Suite">
+  <listeners>
+    <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    <listener class-name="com.sangram.qa.listeners.TestListener"/>
+  </listeners>
   <test name="Sanity">
     <classes>
       <class name="com.sangram.qa.tests.SanitySuiteTest"/>

@@ -1,0 +1,16 @@
+[
+  {
+    "scenarioName": "Valid banking user login",
+    "username": "demo.user",
+    "password": "replace-me",
+    "expectedUrlFragment": "/dashboard",
+    "dashboardTitle": "Dashboard"
+  },
+  {
+    "scenarioName": "Valid utility user login",
+    "username": "qa.utility.user",
+    "password": "replace-me",
+    "expectedUrlFragment": "/dashboard",
+    "dashboardTitle": "Dashboard"
+  }
+]

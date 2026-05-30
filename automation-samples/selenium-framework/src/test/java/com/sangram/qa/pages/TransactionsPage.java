@@ -1,6 +1,6 @@
 package com.sangram.qa.pages;
 
-import com.sangram.qa.utils.WaitHelper;
+import com.sangram.qa.utilities.WaitHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -22,8 +22,8 @@ public class TransactionsPage {
         driver.get(baseUrl + "/transactions");
     }
 
-    public void filterLast30Days() {
-        new Select(waitHelper.visible(dateRange)).selectByValue("last-30-days");
+    public void filterByDateRange(String value) {
+        new Select(waitHelper.visible(dateRange)).selectByValue(value);
         waitHelper.clickable(applyFilters).click();
     }
 

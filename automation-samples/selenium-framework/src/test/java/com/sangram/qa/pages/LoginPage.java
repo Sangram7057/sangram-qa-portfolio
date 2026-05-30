@@ -1,6 +1,6 @@
 package com.sangram.qa.pages;
 
-import com.sangram.qa.utils.WaitHelper;
+import com.sangram.qa.utilities.WaitHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,7 +22,9 @@ public class LoginPage {
     }
 
     public void login(String username, String password) {
+        waitHelper.visible(usernameField).clear();
         waitHelper.visible(usernameField).sendKeys(username);
+        waitHelper.visible(passwordField).clear();
         waitHelper.visible(passwordField).sendKeys(password);
         waitHelper.clickable(signInButton).click();
     }

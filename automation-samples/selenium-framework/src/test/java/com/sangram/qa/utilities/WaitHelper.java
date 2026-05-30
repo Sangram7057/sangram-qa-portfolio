@@ -1,4 +1,4 @@
-package com.sangram.qa.utils;
+package com.sangram.qa.utilities;
 
 import java.time.Duration;
 import org.openqa.selenium.By;

@@ -1,31 +1,33 @@
 # Selenium Framework Sample
 
-This folder demonstrates a mini Selenium WebDriver and TestNG framework with page objects, shared driver setup, suite-based execution, and CI sample files.
+This folder demonstrates a hybrid Selenium WebDriver and TestNG framework with Page Object Model classes, data-driven utilities, Allure and Extent reporting, Log4j logging, shared driver setup, and CI sample files.
 
 ## Structure
 
 - `pom.xml`
-  Maven dependencies, build settings, and execution profiles
+  Maven dependencies, reporting plugins, build settings, and execution profiles
 - `testng.xml`
   Default suite definition covering smoke, sanity, and regression
 - `suites`
   Separate suite XML files for smoke, sanity, and regression runs
 - `.env.example`
   Placeholder environment variables including headless execution
+- `ci`
+  GitHub Actions sample for framework compilation and suite execution
 - `src/test/java/.../base`
-  Shared test setup and teardown
-- `src/test/java/.../config`
-  Environment configuration helper
-- `src/test/java/.../data`
-  Public-safe credential and test user data access
-- `src/test/java/.../factory`
-  Browser driver creation and configuration
+  Shared driver setup and teardown for UI tests
 - `src/test/java/.../pages`
   Page Object Model classes
-- `src/test/java/.../utils`
-  Wait helpers and reusable UI synchronization
+- `src/test/java/.../listeners`
+  TestNG listener with screenshot capture and report integration
+- `src/test/java/.../models`
+  Typed data models for Excel, JSON, and CSV-driven tests
+- `src/test/java/.../utilities`
+  Config reader, Excel/JSON/CSV readers, screenshots, reporting, waits, and data providers
 - `src/test/java/.../tests`
-  Smoke, sanity, and regression suite classes
+  Smoke, sanity, and regression suite classes using data providers
+- `src/test/resources`
+  `config.properties`, `log4j2.xml`, `allure.properties`, JSON/CSV data, and `testdata.xlsx`
 - `Jenkinsfile`
   CI pipeline sample
 
@@ -36,10 +38,11 @@ mvn test -Psmoke
 mvn test -Psanity
 mvn test -Pregression
 mvn test
+mvn allure:serve
 ```
 
 ## Notes
 
 - No client credentials are stored in this repository
 - URLs and locators are generic placeholders
-- The framework uses shared page objects, a driver factory, explicit waits, and suite XMLs to mirror real project structure
+- The framework uses Page Object Model classes, Excel/JSON/CSV-driven test data, Log4j logging, Allure and Extent reporting, and CI-friendly suite XMLs to mirror real project structure
