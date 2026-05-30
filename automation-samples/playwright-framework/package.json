@@ -8,7 +8,9 @@
     "test:smoke": "playwright test tests/smoke",
     "test:sanity": "playwright test tests/sanity",
     "test:regression": "playwright test tests/regression",
-    "mcp": "tsx mcp/playwright-qa-framework-server.ts"
+    "mcp": "tsx mcp/playwright-qa-framework-server.ts",
+    "mcp:smoke": "tsx mcp/playwright-mcp-server.ts",
+    "mcp:regression-sanity": "tsx mcp/playwright-mcp-regression-sanity-server.ts"
   },
   "devDependencies": {
     "@modelcontextprotocol/server": "^1.0.0",

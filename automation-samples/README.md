@@ -15,12 +15,12 @@ This folder contains public-safe QA automation examples that reflect the kinds o
   Mini Playwright framework sample with config, page objects, grouped tests, MCP server, and Jenkinsfile
 - `selenium-framework/`
   Mini Selenium WebDriver and TestNG framework sample with Maven, page objects, grouped suites, and Jenkinsfile
-- `playwright-smoke.spec.ts`
-  Example Playwright smoke flow using environment variables for login data
-- `playwright-mcp-server.ts`
-  Example MCP server that exposes Playwright smoke automation as MCP tools
-- `playwright-mcp-regression-sanity-server.ts`
-  Example MCP server that exposes Playwright sanity and regression suites as MCP tools
+- `playwright-framework/tests/smoke/playwright-smoke.spec.ts`
+  Framework-based Playwright smoke flow covering login, dashboard visibility, and sign-out
+- `playwright-framework/mcp/playwright-mcp-server.ts`
+  Framework-based MCP server that exposes Playwright smoke automation as MCP tools
+- `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`
+  Framework-based MCP server that exposes Playwright sanity and regression suites as MCP tools
 - `selenium-login-smoke-test.java`
   Example Selenium WebDriver and TestNG smoke flow with waits and assertions
 - `selenium-regression-sanity-suite.java`
@@ -28,7 +28,7 @@ This folder contains public-safe QA automation examples that reflect the kinds o
 - `restassured-account-summary-test.java`
   Example Rest Assured API test using a bearer token from the environment
 - `mcp-config.sample.json`
-  Example MCP host configuration for connecting the Playwright MCP server over stdio
+  Example repository-level MCP host configuration for connecting the Playwright framework servers over stdio
 
 ## MCP Server Notes
 

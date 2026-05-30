@@ -9,6 +9,26 @@
         "TEST_USERNAME": "demo.user",
         "TEST_PASSWORD": "replace-me"
       }
+    },
+    "playwright-mcp-server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["tsx", "mcp/playwright-mcp-server.ts"],
+      "env": {
+        "BASE_URL": "https://example.test-app.local",
+        "TEST_USERNAME": "demo.user",
+        "TEST_PASSWORD": "replace-me"
+      }
+    },
+    "playwright-mcp-regression-sanity-server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["tsx", "mcp/playwright-mcp-regression-sanity-server.ts"],
+      "env": {
+        "BASE_URL": "https://example.test-app.local",
+        "TEST_USERNAME": "demo.user",
+        "TEST_PASSWORD": "replace-me"
+      }
     }
   }
 }

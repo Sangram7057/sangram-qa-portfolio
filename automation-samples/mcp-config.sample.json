@@ -2,8 +2,8 @@
   "servers": {
     "playwright-qa-smoke-server": {
       "type": "stdio",
-      "command": "node",
-      "args": ["./build/playwright-mcp-server.js"],
+      "command": "npx",
+      "args": ["tsx", "playwright-framework/mcp/playwright-mcp-server.ts"],
       "env": {
         "BASE_URL": "https://example.test-app.local",
         "TEST_USERNAME": "demo.user",
@@ -12,8 +12,8 @@
     },
     "playwright-qa-regression-sanity-server": {
       "type": "stdio",
-      "command": "node",
-      "args": ["./build/playwright-mcp-regression-sanity-server.js"],
+      "command": "npx",
+      "args": ["tsx", "playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts"],
       "env": {
         "BASE_URL": "https://example.test-app.local",
         "TEST_USERNAME": "demo.user",

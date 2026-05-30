@@ -1,11 +1,11 @@
 import { McpServer } from "@modelcontextprotocol/server";
 import { StdioServerTransport } from "@modelcontextprotocol/server/stdio";
-import { chromium } from "playwright";
+import { chromium, Page } from "playwright";
 import * as z from "zod/v4";
-
-const baseUrl = process.env.BASE_URL ?? "https://example.test-app.local";
-const username = process.env.TEST_USERNAME ?? "demo.user";
-const password = process.env.TEST_PASSWORD ?? "replace-me";
+import { env } from "../src/config/env";
+import { users } from "../src/data/test-users";
+import { DashboardPage } from "../src/pages/DashboardPage";
+import { LoginPage } from "../src/pages/LoginPage";
 
 const server = new McpServer({
   name: "playwright-qa-smoke-server",
@@ -18,26 +18,34 @@ type SmokeResult = {
   checks: string[];
 };
 
-async function runDashboardSmoke(headless: boolean): Promise<SmokeResult> {
+async function withBrowser(
+  headless: boolean,
+  run: (page: Page, checks: string[]) => Promise<SmokeResult>
+): Promise<SmokeResult> {
   const browser = await chromium.launch({ headless });
   const page = await browser.newPage();
-  const checks: string[] = [];
 
   try {
-    await page.goto(`${baseUrl}/login`, { waitUntil: "domcontentloaded" });
+    return await run(page, []);
+  } finally {
+    await browser.close();
+  }
+}
 
-    await page.getByLabel("Username").fill(username);
-    await page.getByLabel("Password").fill(password);
-    await page.getByRole("button", { name: "Sign in" }).click();
+async function runDashboardSmoke(headless: boolean): Promise<SmokeResult> {
+  return withBrowser(headless, async (page, checks) => {
+    const loginPage = new LoginPage(page);
+    const dashboardPage = new DashboardPage(page);
 
+    await loginPage.open(env.baseUrl);
+    checks.push("Login route opened successfully");
+
+    await loginPage.login(users.validUser.username, users.validUser.password);
     await page.waitForURL("**/dashboard");
     checks.push("User redirected to dashboard after login");
 
-    await page.getByRole("heading", { name: "Dashboard" }).waitFor();
-    checks.push("Dashboard heading is visible");
-
-    await page.getByTestId("account-summary-card").waitFor();
-    checks.push("Account summary card is visible");
+    await dashboardPage.expectLoaded();
+    checks.push("Dashboard heading and account summary are visible");
 
     await page.getByTestId("notifications-panel").waitFor();
     checks.push("Notifications panel is visible");
@@ -47,18 +55,12 @@ async function runDashboardSmoke(headless: boolean): Promise<SmokeResult> {
       currentUrl: page.url(),
       checks,
     };
-  } finally {
-    await browser.close();
-  }
+  });
 }
 
 async function capturePublicPage(route: string, headless: boolean): Promise<SmokeResult> {
-  const browser = await chromium.launch({ headless });
-  const page = await browser.newPage();
-  const checks: string[] = [];
-
-  try {
-    await page.goto(`${baseUrl}${route}`, { waitUntil: "domcontentloaded" });
+  return withBrowser(headless, async (page, checks) => {
+    await page.goto(`${env.baseUrl}${route}`, { waitUntil: "domcontentloaded" });
     checks.push(`Opened ${route} successfully`);
 
     const pageTitle = await page.title();
@@ -69,9 +71,7 @@ async function capturePublicPage(route: string, headless: boolean): Promise<Smok
       currentUrl: page.url(),
       checks,
     };
-  } finally {
-    await browser.close();
-  }
+  });
 }
 
 server.registerTool(
