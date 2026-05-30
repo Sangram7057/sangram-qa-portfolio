@@ -1,77 +1,56 @@
-# Sangram Shinde - GitHub QA Portfolio
+# Sangram Shinde - QA Automation Portfolio
 
-This repository is a GitHub-ready portfolio for QA and test automation work. It is designed to present your experience through public, NDA-safe case studies and sample QA artifacts.
+This repository showcases my QA and test automation experience across banking and energy utilities applications. It combines NDA-safe project summaries, practical automation framework samples, and sample QA deliverables that reflect how I approach release quality, regression confidence, and test design.
 
-The portfolio is NDA-safe:
+## Professional Summary
 
-- client-sensitive details are generalized
-- the focus is on test strategy, automation skills, and delivery outcomes
-- sample artifacts show how you work without exposing employer code
+- 4+ years of experience in manual and automation testing
+- Strong hands-on work in Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, and Git
+- Delivered coverage across smoke, sanity, regression, API, database, ETL, system, integration, and UAT testing
+- Reduced manual testing effort by 40% through automation improvements and CI/CD integration
 
-## Portfolio Snapshot
-
-- 4+ years in software testing across banking and energy utilities applications
-- Hands-on expertise in Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, and MCP-based workflows
-- Reduced manual testing effort by 40% through automation
-- Experience across regression, smoke, sanity, API, database, ETL, system, integration, and UAT testing
-
-## What Is Included
+## Repository Highlights
 
 - `index.html`
-  GitHub Pages landing page for your portfolio
-- `styles.css`
-  Styling for the portfolio site
+  Portfolio landing page published through GitHub Pages
 - `automation-samples/`
-  Credential-free UI and API automation code samples for public review
+  Public-safe UI and API automation frameworks for portfolio review
 - `case-studies/`
-  NDA-safe project summaries based on your experience
+  NDA-safe work summaries aligned with banking and utilities experience
 - `artifacts/`
-  Sample QA deliverables that clients can review
+  Sample QA documents including test planning, API checklists, defect reporting, and regression tracking
 - `GITHUB_PROFILE_TEMPLATE.md`
-  Optional template for your personal GitHub profile README
+  Optional profile README reference
 
-## Suggested Repository Names
+## Framework Highlights
 
-- `sangram-qa-portfolio`
-- `qa-automation-portfolio`
-- `sangram-shinde-portfolio`
+- `playwright-framework/`
+  Module-based Playwright framework with page objects, reusable workflows, utility helpers, custom reporter-based listener coverage, tagged `@smoke`, `@sanity`, and `@regression` scenarios, MCP servers, and CI sample files
+- `selenium-framework/`
+  Selenium WebDriver and TestNG framework with Page Object Model design, data-driven support, logging, Allure and Extent reporting, tagged scenario classes, and `master.xml` execution
+- `restassured-framework/`
+  Rest Assured and TestNG hybrid API framework with POJO serialization, reusable clients and request specs, listener-based reporting, logging, and CI/CD samples
 
-## How To Publish On GitHub
+## Representative Code Entry Points
 
-1. Create a GitHub account if you do not have one yet.
-2. Create a new public repository using one of the names above.
-3. Upload all files from this folder into that repository.
-4. Open the repository `Settings` -> `Pages`.
-5. Under `Build and deployment`, choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/ (root)`
-6. Save the settings.
-7. GitHub will generate a live link like:
-   - `https://your-username.github.io/sangram-qa-portfolio/`
+- `playwright-framework/tests/LoginTest.spec.ts`
+  Playwright smoke scenario for valid login and dashboard landing
+- `playwright-framework/tests/AuthenticationTest.spec.ts`
+  Playwright sanity scenario for authentication coverage
+- `playwright-framework/tests/AccountsTest.spec.ts`
+  Playwright tagged module coverage for account search scenarios
+- `selenium-framework/src/test/java/com/sangram/qa/tests/LoginTest.java`
+  Selenium smoke scenario for valid login flow
+- `selenium-framework/src/test/java/com/sangram/qa/tests/AccountsTest.java`
+  Selenium module coverage with tagged sanity and regression scenarios
+- `restassured-framework/src/test/java/com/sangram/api/tests/RegressionSuiteTest.java`
+  API regression coverage for profile, preferences, and negative-path validation
 
-## Suggested Portfolio Introduction
+## Public Share Note
 
-I am a Software Test Engineer with 4+ years of experience in automation and manual testing across banking and energy utilities applications. My work includes web testing, API validation, database checks, ETL and migration support, CI/CD execution, release validation, and test framework improvement using Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, and MCP-based workflows. This repository is a public NDA-safe portfolio that reflects my resume through selected project summaries, sample QA artifacts, and practical quality engineering deliverables.
+All materials in this repository are safe for public review:
 
-## Code Samples
-
-This portfolio also includes public-safe automation code examples in [automation-samples](./automation-samples):
-
-- Playwright mini framework sample with page objects, utility helpers, listener-style reporting, config, MCP server, and Jenkinsfile
-- Framework-based Playwright scenario coverage under `playwright-framework/tests/LoginTest.spec.ts`
-- Framework-based Playwright sanity coverage under `playwright-framework/tests/AuthenticationTest.spec.ts`
-- Framework-based Playwright tagged module coverage under `playwright-framework/tests/AccountsTest.spec.ts`
-- Framework-based Playwright MCP smoke server under `playwright-framework/mcp/playwright-mcp-server.ts`
-- Framework-based Playwright MCP sanity and regression server under `playwright-framework/mcp/playwright-mcp-regression-sanity-server.ts`
-- Selenium hybrid framework sample with Page Object Model classes, Excel/JSON/CSV-driven data, Log4j logging, Allure and Extent reporting, and CI samples
-- Selenium master suite under `selenium-framework/master.xml` for running all tagged scenario classes
-- Framework-based Selenium smoke scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/LoginTest.java`
-- Framework-based Selenium sanity scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/AuthenticationTest.java`
-- Framework-based Selenium regression scenario under `selenium-framework/src/test/java/com/sangram/qa/tests/AccountsTest.java`
-- Rest Assured hybrid framework sample with POJO serialization, shared request specs, reusable clients, Allure plus Extent reporting, SLF4J logging, and CI pipeline samples
-- Framework-based Rest Assured smoke suite under `restassured-framework/src/test/java/com/sangram/api/tests/SmokeSuiteTest.java`
-- Framework-based Rest Assured sanity suite under `restassured-framework/src/test/java/com/sangram/api/tests/SanitySuiteTest.java`
-- Framework-based Rest Assured regression suite under `restassured-framework/src/test/java/com/sangram/api/tests/RegressionSuiteTest.java`
-
-All examples avoid hardcoded credentials and use environment variables or placeholders instead.
+- no production credentials are included
+- client-sensitive details are generalized
+- framework samples use placeholders or environment variables
+- the focus is on testing approach, automation structure, and delivery quality
