@@ -1,6 +1,6 @@
 # Sangram Shinde - GitHub QA Portfolio
 
-This repository is a GitHub-ready portfolio for QA and test automation work. It is designed to help you publish a professional portfolio link for Upwork even when you cannot share private client repositories.
+This repository is a GitHub-ready portfolio for QA and test automation work. It is designed to present your experience through public, NDA-safe case studies and sample QA artifacts.
 
 The portfolio is NDA-safe:
 
@@ -47,19 +47,6 @@ The portfolio is NDA-safe:
 6. Save the settings.
 7. GitHub will generate a live link like:
    - `https://your-username.github.io/sangram-qa-portfolio/`
-
-## How To Use This For Upwork
-
-- Put the GitHub Pages link in your Upwork portfolio
-- Add the repository link in your profile overview
-- Mention that the portfolio contains:
-  - QA case studies
-  - sample automation-oriented deliverables
-  - regression, API, and database testing evidence structure
-
-## Suggested Upwork Headline
-
-`Automation Test Engineer | Selenium WebDriver | Playwright | Rest Assured | SQL | Jenkins`
 
 ## Suggested Portfolio Introduction
 
