@@ -1,5 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Rest Assured Regression Suite">
+  <listeners>
+    <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    <listener class-name="com.sangram.api.listeners.ApiTestListener"/>
+  </listeners>
   <test name="Regression">
     <classes>
       <class name="com.sangram.api.tests.RegressionSuiteTest"/>

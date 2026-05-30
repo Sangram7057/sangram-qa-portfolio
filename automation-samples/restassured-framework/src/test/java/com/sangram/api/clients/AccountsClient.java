@@ -1,6 +1,8 @@
 package com.sangram.api.clients;
 
+import com.sangram.api.models.request.TransactionSearchRequest;
 import com.sangram.api.specs.ApiRequestSpecs;
+import com.sangram.api.utils.JsonUtils;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
@@ -29,6 +31,15 @@ public class AccountsClient {
             .queryParam("transactionType", transactionType)
         .when()
             .get("/api/accounts/{accountId}/transactions");
+    }
+
+    public Response searchTransactions(String accountId, TransactionSearchRequest request) {
+        return given()
+            .spec(ApiRequestSpecs.authorizedJson())
+            .pathParam("accountId", accountId)
+            .body(JsonUtils.toJson(request))
+        .when()
+            .post("/api/accounts/{accountId}/transactions/search");
     }
 
     public Response getAccountSummaryWithoutAuth() {

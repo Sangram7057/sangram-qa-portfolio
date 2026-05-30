@@ -3,3 +3,4 @@ automation-samples/playwright-framework/playwright-report/
 automation-samples/playwright-framework/test-results/
 automation-samples/selenium-framework/target/
 automation-samples/restassured-framework/target/
+automation-samples/restassured-framework/logs/

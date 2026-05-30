@@ -8,6 +8,7 @@ public final class ApiTestData {
     public static final String LAST_30_DAYS = "last-30-days";
     public static final String CREDIT = "credit";
     public static final String INVALID_ACCOUNT_ID = "ACC-INVALID-404";
+    public static final String DEFAULT_LANGUAGE = "en";
 
     private ApiTestData() {
     }

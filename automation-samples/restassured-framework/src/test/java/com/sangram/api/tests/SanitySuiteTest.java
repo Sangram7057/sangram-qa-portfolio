@@ -1,37 +1,41 @@
 package com.sangram.api.tests;
 
+import com.sangram.api.assertions.AccountAssertions;
+import com.sangram.api.assertions.ResponseAssertions;
+import com.sangram.api.assertions.TransactionAssertions;
 import com.sangram.api.base.ApiTestBase;
+import com.sangram.api.builders.TransactionSearchRequestBuilder;
 import com.sangram.api.data.ApiTestData;
+import com.sangram.api.models.request.TransactionSearchRequest;
+import com.sangram.api.models.response.AccountDetailsResponse;
+import com.sangram.api.models.response.TransactionsResponse;
+import com.sangram.api.utils.JsonUtils;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.hamcrest.Matchers.oneOf;
 
 public class SanitySuiteTest extends ApiTestBase {
     @Test(groups = {"sanity"})
     public void accountDetailsReturnsOwnerAndBalanceFields() {
-        accountsClient.getAccountDetails(ApiTestData.PRIMARY_ACCOUNT_ID)
-            .then()
-            .statusCode(200)
-            .body("status", equalTo("SUCCESS"))
-            .body("data.accountId", equalTo(ApiTestData.PRIMARY_ACCOUNT_ID))
-            .body("data.owner.customerId", notNullValue())
-            .body("data.currency", notNullValue())
-            .body("data.availableBalance", notNullValue());
+        Response response = accountsClient.getAccountDetails(ApiTestData.PRIMARY_ACCOUNT_ID);
+        ResponseAssertions.assertStatusCode(response, 200);
+
+        AccountDetailsResponse accountDetailsResponse = JsonUtils.fromResponse(response, AccountDetailsResponse.class);
+        AccountAssertions.assertAccountDetails(accountDetailsResponse, ApiTestData.PRIMARY_ACCOUNT_ID);
     }
 
     @Test(groups = {"sanity"})
-    public void transactionHistorySupportsDateRangeFiltering() {
-        accountsClient.getTransactions(ApiTestData.PRIMARY_ACCOUNT_ID, ApiTestData.LAST_30_DAYS, ApiTestData.CREDIT)
-            .then()
-            .statusCode(200)
-            .body("status", equalTo("SUCCESS"))
-            .body("data.filters.dateRange", equalTo(ApiTestData.LAST_30_DAYS))
-            .body("data.transactions.size()", greaterThanOrEqualTo(1))
-            .body("data.transactions[0].transactionId", notNullValue())
-            .body("data.transactions[0].type", oneOf("credit", "debit"))
-            .body("data.transactions[0].amount", notNullValue());
+    public void transactionSearchSupportsSerializedFilterPayload() {
+        TransactionSearchRequest request = new TransactionSearchRequestBuilder()
+            .dateRange(ApiTestData.LAST_30_DAYS)
+            .transactionType(ApiTestData.CREDIT)
+            .page(1)
+            .pageSize(20)
+            .build();
+
+        Response response = accountsClient.searchTransactions(ApiTestData.PRIMARY_ACCOUNT_ID, request);
+        ResponseAssertions.assertStatusCode(response, 200);
+
+        TransactionsResponse transactionsResponse = JsonUtils.fromResponse(response, TransactionsResponse.class);
+        TransactionAssertions.assertTransactionFilterContract(transactionsResponse, ApiTestData.LAST_30_DAYS);
     }
 }
