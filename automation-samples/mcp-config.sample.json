@@ -9,6 +9,16 @@
         "TEST_USERNAME": "demo.user",
         "TEST_PASSWORD": "replace-me"
       }
+    },
+    "playwright-qa-regression-sanity-server": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["./build/playwright-mcp-regression-sanity-server.js"],
+      "env": {
+        "BASE_URL": "https://example.test-app.local",
+        "TEST_USERNAME": "demo.user",
+        "TEST_PASSWORD": "replace-me"
+      }
     }
   }
 }

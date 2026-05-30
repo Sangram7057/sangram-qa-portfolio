@@ -60,7 +60,9 @@ This portfolio also includes public-safe automation code examples in [automation
 
 - Playwright smoke coverage example
 - Playwright MCP server example
+- Playwright MCP sanity and regression suite example
 - Selenium WebDriver and TestNG login smoke test
+- Selenium regression and sanity suite example
 - Rest Assured API contract validation sample
 
 All examples avoid hardcoded credentials and use environment variables or placeholders instead.
