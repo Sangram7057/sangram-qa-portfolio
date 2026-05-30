@@ -29,8 +29,8 @@ This folder contains public-safe QA automation examples that reflect the kinds o
   Framework-based Selenium regression flow across accounts, transactions, and profile checks
 - `restassured-account-summary-test.java`
   Example Rest Assured API test using a bearer token from the environment
-- `mcp-config.sample.json`
-  Example repository-level MCP host configuration for connecting the Playwright framework servers over stdio
+- `playwright-framework/mcp/mcp-config.sample.json`
+  Framework-level MCP host configuration for connecting Playwright framework servers over stdio
 
 ## MCP Server Notes
 
