@@ -1,34 +1,34 @@
-# Utility Customer Platform Quality Assurance
+# Florida Power & Light Company (FPL) and Public Resources New Mexico (PMNR)
 
 ## Overview
 
-This case study reflects testing work on a utility web platform supporting billing, outage reporting, service requests, and customer visibility into energy-related information.
+This case study reflects testing work on a utility web platform covering billing, outage reporting, service requests, and energy monitoring for two utility programs.
 
 ## Scope
 
-- customer billing workflows
+- billing workflows
 - outage reporting flows
 - service request handling
-- backend integration checks
-- data accuracy validation
+- energy monitoring coverage
+- backend integration and data accuracy checks
 
 ## My Contribution
 
-- tested end-to-end customer journeys across major service flows
-- verified integration behavior and response handling between connected systems
-- checked data consistency and correctness in business-critical scenarios
-- supported stable releases through structured functional and regression coverage
+- tested a web platform covering customer-facing utility workflows
+- verified customer workflows and backend integrations
+- checked data accuracy and secure data handling
+- supported reliable utility operations through structured testing
 
 ## QA Focus Areas
 
-- customer-facing workflow accuracy
-- backend data reliability
-- secure handling of customer information
-- dependable behavior during release cycles
+- customer workflow accuracy
+- backend integration reliability
+- data accuracy
+- secure data handling
 
 ## Outcome
 
-This work demanded strong functional validation and careful attention to user-impacting scenarios. The result was better release confidence for utility operations that depend on stable customer services.
+This work supported reliable customer operations by validating critical service flows and backend behavior in the utility domain.
 
 ## Public Portfolio Note
 

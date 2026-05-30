@@ -1,33 +1,33 @@
-# Banking Risk Monitoring Platform
+# Citi Bank - Control Risk Monitoring (CRM)
 
 ## Overview
 
-This case study summarizes my QA contribution to a banking risk and control monitoring platform. The work focused on reliable workflow validation, reporting confidence, and release support in a domain where defects can impact compliance and audit readiness.
+This case study reflects my contribution to control and monitoring reviews within a banking risk environment. The work focused on identifying monitoring gaps, supporting audit readiness, and improving confidence in control effectiveness.
 
 ## Scope
 
-- business workflow validation
-- reporting and monitoring checks
-- regression and release readiness support
-- defect triage collaboration
+- control review support
+- monitoring gap identification
+- audit readiness support
+- control effectiveness observations
 
 ## My Contribution
 
-- validated important control and monitoring workflows
-- reviewed outputs for consistency, accuracy, and expected business behavior
-- supported defect analysis with development and delivery teams
-- contributed to release confidence through structured QA execution
+- reviewed controls across ARCM pillars to identify monitoring gaps
+- identified control gaps and monitoring breaks
+- aided audit readiness through focused review support
+- recommended improvements to strengthen control effectiveness
 
 ## QA Focus Areas
 
-- high-risk business scenarios
+- ARCM-aligned reviews
 - control gap visibility
-- audit-readiness related behavior
-- end-to-end monitoring workflow stability
+- monitoring break identification
+- audit-readiness support
 
 ## Outcome
 
-The project required disciplined testing around business-critical flows where accuracy and stability matter more than visual polish alone. My role helped improve confidence in control-related workflows and supported safer release decisions.
+The work helped strengthen audit readiness and supported better control visibility in a banking risk environment.
 
 ## Public Portfolio Note
 

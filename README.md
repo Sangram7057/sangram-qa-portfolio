@@ -10,10 +10,10 @@ The portfolio is NDA-safe:
 
 ## Portfolio Snapshot
 
-- 4+ years in software testing across banking and utilities
-- Strong hands-on work in Selenium, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, and Git
+- 4+ years in software testing across banking and energy utilities applications
+- Hands-on expertise in Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, and MCP-based workflows
 - Reduced manual testing effort by 40% through automation
-- Experience across regression, smoke, sanity, API, database, integration, system, and UAT testing
+- Experience across regression, smoke, sanity, API, database, ETL, system, integration, and UAT testing
 
 ## What Is Included
 
@@ -59,8 +59,8 @@ The portfolio is NDA-safe:
 
 ## Suggested Upwork Headline
 
-`Automation Test Engineer | Selenium | Playwright | API Testing | SQL | Jenkins`
+`Automation Test Engineer | Selenium WebDriver | Playwright | Rest Assured | SQL | Jenkins`
 
 ## Suggested Portfolio Introduction
 
-I am a Software Test Engineer with 4+ years of experience in automation and manual testing across banking and utility platforms. My work includes web testing, API validation, database checks, CI/CD execution, release validation, and test framework improvement using Selenium, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, and Jenkins. This repository is a public NDA-safe portfolio that showcases how I plan, execute, and report quality engineering work.
+I am a Software Test Engineer with 4+ years of experience in automation and manual testing across banking and energy utilities applications. My work includes web testing, API validation, database checks, ETL and migration support, CI/CD execution, release validation, and test framework improvement using Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, and MCP-based workflows. This repository is a public NDA-safe portfolio that reflects my resume through selected project summaries, sample QA artifacts, and practical quality engineering deliverables.

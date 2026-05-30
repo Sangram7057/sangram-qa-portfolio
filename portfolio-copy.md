@@ -7,15 +7,15 @@ Use these links after publishing:
 
 ## Portfolio Title
 
-`QA Automation Portfolio | Selenium | Playwright | API Testing`
+`QA Automation Portfolio | Selenium WebDriver | Playwright | Rest Assured`
 
 ## Short Portfolio Description
 
-This is my public QA and test automation portfolio showcasing NDA-safe project case studies, sample QA artifacts, and my practical experience in Selenium, Playwright, API testing, SQL validation, Jenkins, and release support. It highlights my approach to functional testing, automation, regression coverage, defect reporting, and quality engineering for real-world applications.
+This is my public QA and test automation portfolio showcasing NDA-safe project case studies, sample QA artifacts, and my practical experience in Selenium WebDriver, Playwright, Rest Assured, SQL validation, Jenkins, and release support. It reflects my work across banking and energy utilities applications and highlights my approach to automation, regression coverage, API testing, database validation, and quality engineering delivery.
 
 ## Upwork Profile Overview
 
-Software Test Engineer with 4+ years of experience in manual and automation testing across banking and utility applications. I work with Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, Git, and JIRA. My experience includes regression testing, smoke and sanity testing, API validation, database testing, UAT support, and CI/CD-based release validation. I have helped improve regression efficiency and reduce manual testing effort by 40% through practical automation and stable QA processes.
+Software Test Engineer with 4+ years of experience in automation and manual testing across banking and energy utilities applications. I work with Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, Maven, Git, JIRA, and MCP-based workflows. My experience includes regression testing, smoke testing, sanity testing, API validation, database and ETL testing, UAT support, and CI/CD-based release validation. I have helped improve regression efficiency and reduce manual testing effort by 40% through practical automation and stable QA processes.
 
 Portfolio links:
 

@@ -1,8 +1,8 @@
-# Financial Calculator Validation
+# ANZ Banking - Calculator Modules
 
 ## Overview
 
-This case study highlights testing performed for customer-facing banking calculators with dynamic inputs, business rules, and calculation logic that needed careful validation.
+This case study reflects testing performed on multiple banking calculator modules where calculation accuracy, business rules, and edge-case behavior were important to the end-user experience.
 
 ## Scope
 
@@ -13,21 +13,21 @@ This case study highlights testing performed for customer-facing banking calcula
 
 ## My Contribution
 
-- designed and executed scenario-based testing for calculator workflows
-- validated dynamic input combinations and business-rule handling
-- checked calculation accuracy, UI behavior, and edge cases
-- reported defects clearly for customer-facing issues with financial impact
+- tested multiple financial calculator modules under the ANZ Banking project
+- validated dynamic inputs and business-rule handling
+- confirmed calculation accuracy, UI behavior, and edge-case handling
+- supported customer-facing financial workflow quality through detailed validation
 
 ## QA Focus Areas
 
-- rule-based validation
-- edge-case coverage
-- user input handling
-- visible result accuracy
+- business-rule validation
+- dynamic input coverage
+- edge-case handling
+- visible calculation accuracy
 
 ## Outcome
 
-This work helped improve trust in financial calculations presented to end users by ensuring business logic and UI behavior remained aligned across supported scenarios.
+This work helped maintain confidence in customer-facing financial workflows by validating calculation behavior across supported scenarios.
 
 ## Public Portfolio Note
 
