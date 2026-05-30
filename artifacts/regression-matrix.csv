@@ -1,0 +1,11 @@
+Module,TestCaseID,Scenario,TestType,Priority,Status
+Login,REG-001,Valid user can log in successfully,Smoke,High,Ready
+Login,REG-002,Invalid password returns proper validation,Negative,High,Ready
+Billing,REG-003,Customer can view latest bill details,Functional,High,Ready
+Billing,REG-004,Successful payment updates summary section,Regression,High,Ready
+Outage,REG-005,User can report outage with required fields,Functional,Medium,Ready
+Service Requests,REG-006,User can create and track a service request,Regression,Medium,Ready
+Calculator,REG-007,Home loan calculator returns expected EMI value,Functional,High,Ready
+Calculator,REG-008,Calculator handles zero or empty value validation,Negative,High,Ready
+API Auth,REG-009,Protected endpoint rejects expired token,API,High,Ready
+Database,REG-010,Source and target values reconcile after migration,Database,High,Ready

@@ -1,0 +1,10 @@
+Open terminal in:
+C:\Users\HP\OneDrive\Documents\New project\github_qa_portfolio
+
+Run:
+git init
+git add .
+git commit -m "Add QA automation portfolio website and case studies"
+git branch -M main
+git remote add origin https://github.com/Sangram231116/sangram-qa-portfolio.git
+git push -u origin main
