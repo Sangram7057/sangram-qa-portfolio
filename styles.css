@@ -390,6 +390,10 @@ a {
   animation-delay: 210ms;
 }
 
+#code.reveal {
+  animation-delay: 240ms;
+}
+
 #artifacts.reveal {
   animation-delay: 270ms;
 }

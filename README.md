@@ -21,6 +21,8 @@ The portfolio is NDA-safe:
   GitHub Pages landing page for your portfolio
 - `styles.css`
   Styling for the portfolio site
+- `automation-samples/`
+  Credential-free UI and API automation code samples for public review
 - `case-studies/`
   NDA-safe project summaries based on your experience
 - `artifacts/`
@@ -51,3 +53,13 @@ The portfolio is NDA-safe:
 ## Suggested Portfolio Introduction
 
 I am a Software Test Engineer with 4+ years of experience in automation and manual testing across banking and energy utilities applications. My work includes web testing, API validation, database checks, ETL and migration support, CI/CD execution, release validation, and test framework improvement using Selenium WebDriver, Playwright, Java, TypeScript, TestNG, Rest Assured, SQL, Jenkins, and MCP-based workflows. This repository is a public NDA-safe portfolio that reflects my resume through selected project summaries, sample QA artifacts, and practical quality engineering deliverables.
+
+## Code Samples
+
+This portfolio also includes public-safe automation code examples in [automation-samples](./automation-samples):
+
+- Playwright smoke coverage example
+- Selenium WebDriver and TestNG login smoke test
+- Rest Assured API contract validation sample
+
+All examples avoid hardcoded credentials and use environment variables or placeholders instead.
